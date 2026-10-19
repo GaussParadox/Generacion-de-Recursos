@@ -3,8 +3,8 @@
 Proyecto de Godot 4.5 del taller **Producción de assets para videojuegos con inteligencia artificial**
 (Diseño Multimedia y Videojuegos, FESC, Ingeniería de Software IX).
 
-- **Integrantes:** _Nombre 1_, _Nombre 2_
-- **Repositorio público:** _pegue aquí el enlace de GitHub o GitLab_
+- **Integrantes:** Wilson Alejandro Saavedra Arenales y Oscar Andres Arciniegas Bustos
+- **Repositorio público:** (https://github.com/GaussParadox/Generacion-de-Recursos)
 - **Motor:** Godot 4.5
 
 ## Cómo abrir y jugar
@@ -18,7 +18,7 @@ Controles: **flechas** para moverse, **espacio / Enter / ↑** para saltar, **C*
 (**Esc** o **C** para volver). Acérquese al guardián (extremo derecho del nivel) para hablar.
 Caer a un hueco reinicia al personaje con sonido y chispas de daño.
 
-## Qué contiene cada nivel
+## Qué contiene cada nivel requerido del documento
 
 | Nivel | Contenido en el proyecto |
 |---|---|
