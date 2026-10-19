@@ -1,0 +1,26 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/chispas.gd" id="1_scr"]
+[ext_resource type="Texture2D" path="res://assets/vfx/chispa.png" id="2_tex"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1"]
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+spread = 60.0
+initial_velocity_min = 80.0
+initial_velocity_max = 160.0
+gravity = Vector3(0, 300, 0)
+scale_min = 1.0
+scale_max = 1.5
+
+[node name="Efecto" type="Node2D"]
+script = ExtResource("1_scr")
+
+[node name="Chispas" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 32
+texture = ExtResource("2_tex")
+lifetime = 0.6
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_1")

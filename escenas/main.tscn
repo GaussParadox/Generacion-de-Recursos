@@ -1,0 +1,100 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_main"]
+[ext_resource type="PackedScene" path="res://escenas/nivel.tscn" id="2_niv"]
+[ext_resource type="PackedScene" path="res://escenas/jugador.tscn" id="3_jug"]
+[ext_resource type="PackedScene" path="res://escenas/moneda.tscn" id="4_mon"]
+[ext_resource type="PackedScene" path="res://escenas/chispas.tscn" id="5_efe"]
+[ext_resource type="PackedScene" path="res://escenas/interfaz.tscn" id="6_ui"]
+[ext_resource type="Script" path="res://scripts/dialogo_npc.gd" id="7_npc"]
+[ext_resource type="Texture2D" path="res://assets/sprites/guardian.png" id="8_gua"]
+[ext_resource type="AudioStream" path="res://assets/audio/musica.ogg" id="9_mus"]
+[ext_resource type="AudioStream" path="res://assets/audio/salto.wav" id="10_sal"]
+[ext_resource type="AudioStream" path="res://assets/audio/recoger.wav" id="11_rec"]
+[ext_resource type="AudioStream" path="res://assets/audio/dano.wav" id="12_dan"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_npc"]
+radius = 48.0
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_main")
+
+[node name="Cielo" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="Fondo" type="ColorRect" parent="Cielo"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.353, 0.71, 0.839, 1)
+
+[node name="Nivel" parent="." instance=ExtResource("2_niv")]
+
+[node name="Monedas" type="Node2D" parent="."]
+
+[node name="Moneda1" parent="Monedas" instance=ExtResource("4_mon")]
+position = Vector2(240, 272)
+
+[node name="Moneda2" parent="Monedas" instance=ExtResource("4_mon")]
+position = Vector2(304, 208)
+
+[node name="Moneda3" parent="Monedas" instance=ExtResource("4_mon")]
+position = Vector2(432, 240)
+
+[node name="Moneda4" parent="Monedas" instance=ExtResource("4_mon")]
+position = Vector2(464, 240)
+
+[node name="Moneda5" parent="Monedas" instance=ExtResource("4_mon")]
+position = Vector2(720, 176)
+
+[node name="Moneda6" parent="Monedas" instance=ExtResource("4_mon")]
+position = Vector2(752, 176)
+
+[node name="Moneda7" parent="Monedas" instance=ExtResource("4_mon")]
+position = Vector2(944, 240)
+
+[node name="Moneda8" parent="Monedas" instance=ExtResource("4_mon")]
+position = Vector2(976, 240)
+
+[node name="Moneda9" parent="Monedas" instance=ExtResource("4_mon")]
+position = Vector2(1104, 272)
+
+[node name="Guardian" type="Area2D" parent="."]
+position = Vector2(1400, 288)
+script = ExtResource("7_npc")
+
+[node name="Sprite2D" type="Sprite2D" parent="Guardian"]
+position = Vector2(0, -16)
+texture = ExtResource("8_gua")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Guardian"]
+position = Vector2(0, -16)
+shape = SubResource("CircleShape2D_npc")
+
+[node name="Jugador" parent="." instance=ExtResource("3_jug")]
+position = Vector2(64, 280)
+
+[node name="Efectos" parent="." instance=ExtResource("5_efe")]
+
+[node name="Musica" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_mus")
+volume_db = -6.0
+bus = &"Musica"
+
+[node name="SfxSalto" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_sal")
+bus = &"SFX"
+
+[node name="SfxRecoger" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_rec")
+bus = &"SFX"
+
+[node name="SfxDano" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_dan")
+bus = &"SFX"
+
+[node name="Interfaz" parent="." instance=ExtResource("6_ui")]

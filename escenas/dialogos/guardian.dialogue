@@ -1,0 +1,15 @@
+~ inicio
+Guardián: ¡Alto ahí, viajero! Este bosque guarda un viejo secreto.
+Guardián: ¿Qué te trae por aquí?
+- Busco el tesoro del bosque => tesoro
+- Solo estoy explorando => explorar
+
+~ tesoro
+Guardián: El tesoro existe, pero solo lo encuentra quien es curioso de verdad.
+Guardián: Recoge todas las monedas del camino y vuelve a hablar conmigo.
+=> END
+
+~ explorar
+Guardián: Entonces disfruta del paseo, explorador.
+Guardián: Cuidado con los huecos del camino: no hay red debajo.
+=> END

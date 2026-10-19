@@ -1,0 +1,13 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/nivel.gd" id="1_scr"]
+[ext_resource type="TileSet" path="res://assets/tiles/tileset.tres" id="2_ts"]
+
+[node name="Nivel" type="Node2D"]
+script = ExtResource("1_scr")
+
+[node name="Decoracion" type="TileMapLayer" parent="."]
+tile_set = ExtResource("2_ts")
+
+[node name="Suelo" type="TileMapLayer" parent="."]
+tile_set = ExtResource("2_ts")

@@ -1,0 +1,90 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/interfaz.gd" id="1_scr"]
+[ext_resource type="Texture2D" path="res://assets/sprites/ui_marco.png" id="2_marco"]
+[ext_resource type="Texture2D" path="res://assets/sprites/ui_moneda.png" id="3_moneda"]
+
+[node name="Interfaz" type="CanvasLayer"]
+script = ExtResource("1_scr")
+
+[node name="HUD" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Icono" type="TextureRect" parent="HUD"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 48.0
+offset_bottom = 48.0
+mouse_filter = 2
+texture = ExtResource("3_moneda")
+expand_mode = 1
+
+[node name="Monedas" type="Label" parent="HUD"]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 18.0
+offset_right = 320.0
+offset_bottom = 48.0
+theme_override_font_sizes/font_size = 22
+text = "Monedas: 0"
+
+[node name="Ayuda" type="Label" parent="HUD"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 56.0
+offset_right = 700.0
+offset_bottom = 82.0
+theme_override_font_sizes/font_size = 16
+text = "Flechas: mover  ·  Espacio o ↑: saltar  ·  C: ver el cofre 3D"
+
+[node name="Dialogo" type="NinePatchRect" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = -176.0
+offset_right = -24.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("2_marco")
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
+
+[node name="Texto" type="Label" parent="Dialogo"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 24.0
+offset_top = 16.0
+offset_right = -24.0
+offset_bottom = 72.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 22
+autowrap_mode = 3
+
+[node name="Opciones" type="VBoxContainer" parent="Dialogo"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = -80.0
+offset_right = -24.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 2
